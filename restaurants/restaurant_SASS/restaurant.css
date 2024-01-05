@@ -1,0 +1,646 @@
+@charset "UTF-8";
+/**** GÉNÉRALE ****/
+/* Colors */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1920px;
+}
+body header {
+  position: relative;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+}
+body header .logo {
+  width: 50%;
+}
+body header a {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+body header a i {
+  color: #353535;
+  font-size: 200%;
+}
+body .restaurant {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body .restaurant .div-img {
+  height: 25vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .restaurant .div-img img {
+  width: 100%;
+}
+body .restaurant .palette {
+  position: relative;
+  background-color: #F6F6F6;
+  width: 100%;
+  height: auto;
+  border-radius: 30px 30px 0 0;
+  margin-top: -8%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+body .restaurant .palette .title-zone {
+  position: relative;
+  width: 90vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .restaurant .palette .title-zone h2 {
+  font-family: "Shrikhand", serif;
+  font-size: 7vw;
+  font-weight: 400;
+}
+body .restaurant .palette .title-zone .like-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 25%;
+  font-size: 180%;
+}
+body .restaurant .palette .title-zone .like-div i {
+  position: absolute;
+}
+body .restaurant .palette .title-zone .like-div .semi-heart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-text-stroke: 1px black;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  animation: heartAnimInverse 1s ease forwards;
+  -webkit-background-clip: text;
+  color: transparent;
+  width: 100%;
+  height: 0%;
+}
+@keyframes heartAnim {
+  0% {
+    -webkit-text-stroke: 1px black;
+    height: 0%;
+  }
+  100% {
+    -webkit-text-stroke: 1px transparent;
+    height: 36%;
+  }
+}
+body .restaurant .palette .title-zone .like-div #toggle {
+  cursor: pointer;
+  z-index: 3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+}
+body .restaurant .palette .title-zone .like-div #toggle:checked + .semi-heart {
+  animation: heartAnim 1s ease forwards;
+  width: 100%;
+}
+body .restaurant .palette .type-plates:nth-child(2) {
+  animation: slideIn 3s ease forwards;
+}
+body .restaurant .palette .type-plates:nth-child(3) {
+  animation: slideIn 5s ease forwards;
+}
+body .restaurant .palette .type-plates:nth-child(4) {
+  animation: slideIn 7s ease forwards;
+}
+@keyframes slideIn {
+  0% {
+    margin-right: -200vw;
+    color: transparent;
+  }
+  40% {
+    color: transparent;
+  }
+  100% {
+    margin-right: 0;
+    color: black;
+  }
+}
+body .restaurant .palette .type-plates {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90vw;
+  color: transparent;
+}
+body .restaurant .palette .type-plates .div-type {
+  width: auto;
+  height: 6vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+body .restaurant .palette .type-plates .div-type h3 {
+  width: auto;
+  font-weight: lighter;
+  font-size: 4.5vw;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0;
+}
+body .restaurant .palette .type-plates .div-type hr {
+  margin: 0;
+  margin-top: 4%;
+  color: transparent;
+  background-color: #99E2D0;
+  border: none;
+  width: 58%;
+  height: 2.5px;
+}
+body .restaurant .palette .type-plates .plate {
+  position: relative;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 5%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+  overflow: hidden;
+}
+body .restaurant .palette .type-plates .plate .plate-txt {
+  z-index: 1;
+  position: relative;
+  width: 80%;
+  animation: txtRetractionInverse 1s ease forwards;
+  height: 100%;
+  padding-left: 4%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+body .restaurant .palette .type-plates .plate .plate-txt h4 {
+  width: 100%;
+  height: 35%;
+  font-size: 4.5vw;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .restaurant .palette .type-plates .plate .plate-txt p {
+  width: 100%;
+  font-size: 4vw;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .restaurant .palette .type-plates .plate .validated {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  width: 9vh;
+  margin: 0;
+  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7vw;
+  color: white;
+}
+body .restaurant .palette .type-plates .plate .validated .price {
+  position: absolute;
+  font-size: 3.6vw;
+  left: -60%;
+  bottom: 30%;
+  width: 8vw;
+  color: black;
+  text-align: end;
+}
+body .restaurant .palette .type-plates .plate .toggle2 {
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+body .restaurant .palette .type-plates .plate .toggle2:checked ~ .validated {
+  animation: priceAnim 1s ease forwards;
+}
+body .restaurant .palette .type-plates .plate .toggle2:checked + .plate-txt {
+  animation: txtRetraction 1s ease forwards;
+}
+body .restaurant .palette .type-plates .plate .toggle2:not(:checked) ~ .validated {
+  animation: priceAnimInverse 1s ease forwards;
+}
+@keyframes txtRetraction {
+  0% {
+    width: 80%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes txtRetractionInverse {
+  0% {
+    width: 60%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes priceAnim {
+  0% {
+    margin-right: -9vh;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@keyframes priceAnimInverse {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: -9vh;
+  }
+}
+body .restaurant .palette .order {
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  font-size: 3.8vw;
+  color: white;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  width: 50vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+}
+body footer {
+  width: 100%;
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+}
+body footer .f-logo {
+  width: 32vw;
+  height: 8vh;
+  margin: 0;
+  margin-left: 5%;
+  border: none;
+  background-repeat: no-repeat;
+  background-image: url(../../images/logo/ohmyfood@2x.svg);
+  background-position: center;
+  background-size: 90%;
+  filter: invert(100%);
+}
+body footer ul {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0;
+  margin-left: 7%;
+}
+body footer ul li {
+  margin-bottom: 3%;
+  color: white;
+  font-size: 4vw;
+}
+body footer ul li i {
+  margin: 0;
+  font-size: 3.5vw;
+  width: 8%;
+}
+body footer ul li a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body header {
+    width: 100%;
+    height: 11vh;
+    box-shadow: none;
+  }
+  body header .logo {
+    width: 35%;
+  }
+  body .restaurant .div-img {
+    height: 50vh;
+  }
+  body .restaurant .div-img img {
+    width: 100%;
+  }
+  body .restaurant .palette .title-zone h2 {
+    font-size: 5.5vw;
+  }
+  body .restaurant .palette .title-zone .like-div {
+    font-size: 300%;
+  }
+  body .restaurant .palette .type-plates .div-type h3 {
+    font-size: 3.5vw;
+  }
+  body .restaurant .palette .type-plates .plate {
+    height: 12vh;
+  }
+  body .restaurant .palette .type-plates .plate .plate-txt h4 {
+    font-size: 4.2vw;
+  }
+  body .restaurant .palette .type-plates .plate .plate-txt p {
+    font-size: 3vw;
+  }
+  body .restaurant .palette .type-plates .plate .validated {
+    width: 15vw;
+    font-size: 6vw;
+  }
+  body .restaurant .palette .type-plates .plate .validated .price {
+    font-size: 3vw;
+    left: -70%;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:checked ~ .validated {
+    animation: priceAnim 1s ease forwards;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:checked + .plate-txt {
+    animation: txtRetraction 1s ease forwards;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:not(:checked) ~ .validated {
+    animation: priceAnimInverse 1s ease forwards;
+  }
+  @keyframes priceAnim {
+    0% {
+      margin-right: -12vh;
+    }
+    100% {
+      margin-right: 0;
+    }
+  }
+  @keyframes priceAnimInverse {
+    0% {
+      margin-right: 0;
+    }
+    100% {
+      margin-right: -12vh;
+    }
+  }
+  body footer .f-logo {
+    width: 20%;
+  }
+  body footer ul li {
+    font-size: 2vw;
+  }
+  body footer ul li i {
+    width: 5%;
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 1025px) {
+  body header {
+    height: 10vh;
+    box-shadow: none;
+  }
+  body header .logo {
+    width: 15%;
+  }
+  body .restaurant .div-img {
+    height: 70vh;
+  }
+  body .restaurant .div-img img {
+    width: 100%;
+  }
+  body .restaurant .palette {
+    width: 80%;
+    margin-top: -3%;
+    display: flex;
+    align-items: center;
+  }
+  body .restaurant .palette .title-zone {
+    width: 30%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  body .restaurant .palette .title-zone h2 {
+    font-size: 1.94vw;
+    white-space: nowrap;
+  }
+  body .restaurant .palette .title-zone .like-div {
+    position: relative;
+    width: 6vh;
+    height: 6vh;
+    font-size: 200%;
+  }
+  body .restaurant .palette .title-zone .like-div i {
+    position: absolute;
+  }
+  body .restaurant .palette .title-zone .like-div .semi-heart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-text-stroke: 1px black;
+    background: linear-gradient(to top, #FF79DA, #9356DC);
+    animation: heartAnimInverse 1s ease forwards;
+    -webkit-background-clip: text;
+    color: transparent;
+    width: 100%;
+    height: 0%;
+  }
+  @keyframes heartAnim {
+    0% {
+      -webkit-text-stroke: 1px black;
+      height: 0%;
+    }
+    100% {
+      -webkit-text-stroke: 1px transparent;
+      height: 100%;
+    }
+  }
+  body .restaurant .palette .type-plates {
+    margin-bottom: 1vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  body .restaurant .palette .type-plates .div-type {
+    width: 60%;
+  }
+  body .restaurant .palette .type-plates .div-type h3 {
+    font-size: 1.11vw;
+  }
+  body .restaurant .palette .type-plates .div-type hr {
+    border: none;
+    width: 5%;
+    height: 2px;
+    margin: 0;
+    margin-top: 0.5%;
+  }
+  body .restaurant .palette .type-plates .plate {
+    height: 9vh;
+    width: 60%;
+    padding: 0;
+    display: flex;
+    margin-bottom: 1%;
+  }
+  body .restaurant .palette .type-plates .plate .plate-txt {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .restaurant .palette .type-plates .plate .plate-txt h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25vw;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+  }
+  body .restaurant .palette .type-plates .plate .plate-txt p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.04vw;
+    height: 4vh;
+  }
+  body .restaurant .palette .type-plates .plate .validated {
+    position: relative;
+    width: 7vw;
+    margin: 0;
+    font-size: 2.5vw;
+  }
+  body .restaurant .palette .type-plates .plate .validated .price {
+    font-size: 1.04vw;
+    left: -130%;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:checked ~ .validated {
+    animation: priceAnimP 1s ease forwards;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:not(:checked) ~ .validated {
+    animation: priceAnimInverseP 1s ease forwards;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:checked + .plate-txt {
+    animation: txtRetractionP 1s ease forwards;
+  }
+  body .restaurant .palette .type-plates .plate .toggle2:not(:checked) ~ .plate-txt {
+    animation: txtRetractionInverseP 1s ease forwards;
+  }
+  @keyframes txtRetractionP {
+    0% {
+      width: 80%;
+    }
+    100% {
+      width: 73%;
+    }
+  }
+  @keyframes txtRetractionInverseP {
+    0% {
+      width: 73%;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+  @keyframes priceAnimP {
+    0% {
+      margin-right: -7vw;
+    }
+    100% {
+      margin-right: 0;
+    }
+  }
+  @keyframes priceAnimInverseP {
+    0% {
+      margin-right: 0;
+    }
+    100% {
+      margin-right: -7vw;
+    }
+  }
+  body .restaurant .palette .order {
+    font-size: 1.11vw;
+    width: 15vw;
+    height: 6vh;
+  }
+  body footer {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    padding-bottom: 3vh;
+  }
+  body footer .f-logo {
+    width: 7%;
+    background-position: bottom;
+    margin: 0;
+    padding: 0;
+    margin-right: 3%;
+  }
+  body footer ul {
+    height: 100%;
+    width: 50%;
+    margin: 0;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  body footer ul li {
+    font-size: 1vw;
+    margin: 0;
+    margin-right: 5%;
+    width: auto;
+    white-space: nowrap;
+  }
+  body footer ul li i {
+    width: 2vw;
+    font-size: 1vw;
+  }
+}
+
+/*# sourceMappingURL=restaurant.css.map */
