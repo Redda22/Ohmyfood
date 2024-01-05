@@ -338,7 +338,7 @@ body .restaurants .div-restaurants .cartes .like-div .semi-heart {
   }
   100% {
     -webkit-text-stroke: 1px transparent;
-    height: 36%;
+    height: 45%;
   }
 }
 body .restaurants .div-restaurants .cartes .like-div .toggle {
