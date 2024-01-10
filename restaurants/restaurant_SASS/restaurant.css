@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /**** GÉNÉRALE ****/
 /* Colors */
+html {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
