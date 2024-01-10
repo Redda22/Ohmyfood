@@ -438,7 +438,7 @@ body {
         width: 100%;
         background-color: $grey-text-color;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
 
         .f-logo {
@@ -457,10 +457,12 @@ body {
         ul {
             text-decoration: none;
             list-style-type: none;
+            width: 90%;
             padding: 0;
             margin-left: 7%;
 
             li {
+                width: 100%;
                 margin-bottom: 3%;
                 color: white;
                 font-size: 4vw;
